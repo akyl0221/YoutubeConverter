@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('FirstApp', '0001_initial'),
+        ('youtubeDl', '0001_initial'),
     ]
 
     operations = [
