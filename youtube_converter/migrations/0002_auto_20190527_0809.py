@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('youtubeDl', '0001_initial'),
+        ('youtube_converter', '0001_initial'),
     ]
 
     operations = [

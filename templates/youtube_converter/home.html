@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Django Forms</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" value="Convert" >
+    </form>
+    {% if people.count > 0 %}
+    <h2>История</h2>
+    <table>
+        <thead><th>Id</th><th>URL</th></thead>
+        {% for url in urls %}
+        <tr>
+            <td>{{ url.id }}</td>
+            <td>{{ url.url }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>
