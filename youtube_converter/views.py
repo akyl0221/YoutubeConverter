@@ -7,15 +7,15 @@ from .downloader import *
 
 
 def index(request):
+    urls = Download.objects.all()
+    urlform = UrlForm()
     if request.method == "POST":
         form = UrlForm(request.POST)
         if form.is_valid():
             url = form.cleaned_data.get('url')
             video_url = converter(url)
             Download.objects.create(url=url)
-        return HttpResponseRedirect(video_url)
-
+            return HttpResponseRedirect(video_url)
+        return render(request, "youtube_converter/home.html", {"form": urlform}, {"urls": urls})
     else:
-        urls = Download.objects.all()
-        urlform = UrlForm()
         return render(request, "youtube_converter/home.html", {"form": urlform}, {"urls": urls})
