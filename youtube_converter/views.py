@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 
 from .forms import UrlForm
 from .models import Download
-from .downloader import *
+from .downloader import converter
 
 
 def index(request):
