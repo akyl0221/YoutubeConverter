@@ -12,7 +12,7 @@ def converter(video_url):
         }],
     }
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        result = ydl.extract_info(video_url, download=False)
+        result = ydl.extract_info(video_url)
 
     vid_url = result['url']
     return vid_url
