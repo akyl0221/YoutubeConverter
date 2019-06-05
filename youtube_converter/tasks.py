@@ -16,19 +16,18 @@ def convert(video_url, email):
         }],
     }
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        result = ydl.extract_info(video_url, download=False)
-    name = result['tetle']
-    vid_url = result['url']
-    sending_mail(email, vid_url)
-    return vid_url, name
+        result = ydl.extract_info(video_url)
+    name = result['title']
+    sending_mail(email, name)
 
 
 @task
 def sending_mail(email, name):
+    link = ('http://127.0.0.1:8000/media/' + name).replace(" ", "%20") + '.mp3'
     send_mail(
         'Download link',
-        'You can download file from this link: {}'.format(name),
-        'foto.nurbek@gmail.com',
+        link,
+        'Kel.199821@gmail.com',
         [email],
         fail_silently=False
     )
