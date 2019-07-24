@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
-from .forms import UrlForm
-from .models import Download
-from .tasks import convert
+from youtube_converter.forms import UrlForm
+from youtube_converter.models import Download
+from youtube_converter.tasks import convert
 
 
 def index(request):
@@ -17,3 +17,8 @@ def index(request):
         return render(request, "youtube_converter/home.html", {"form": urlform})
     else:
         return render(request, "youtube_converter/home.html", {"form": urlform})
+
+
+def history(request):
+    downloads = Download.objects.all()
+    return render(request, "youtube_converter/history.html", {"urls": downloads})

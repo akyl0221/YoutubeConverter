@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from youtube_converter import views
 from django.conf.urls.static import static
-from . import settings
+from OnlineConverter import settings
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('history/', views.history),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

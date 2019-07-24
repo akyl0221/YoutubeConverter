@@ -12,17 +12,5 @@
         </table>
         <input type="submit" value="Convert" >
     </form>
-    {% if urls.count > 0 %}
-    <h2>История</h2>
-    <table>
-        <thead><th>Id</th><th>URL</th></thead>
-        {% for url in urls %}
-        <tr>
-            <td>{{ url.id }}</td>
-            <td>{{ url.url }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
 </body>
 </html>
