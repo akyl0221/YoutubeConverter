@@ -23,7 +23,7 @@ def convert(video_url, email):
 
 @task
 def sending_mail(email, name):
-    link = ('http://127.0.0.1:8000/media/' + name).replace(" ", "%20") + '.mp3'
+    link = ('http://0.0.0.0:8000/media/' + name).replace(" ", "%20") + '.mp3'
     send_mail(
         'Download link',
         link,
