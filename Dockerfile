@@ -11,5 +11,4 @@ ADD . /conv/
 RUN pip install --upgrade pip
 RUN pip install -U pipenv
 RUN pipenv install --system
-RUN pip install -r requirements.txt
 RUN apt-get update && apt-get install -y ffmpeg

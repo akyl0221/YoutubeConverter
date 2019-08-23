@@ -12,9 +12,9 @@
 
 <h2>Requarements</h2>
 <ul>
-    <li>Python 3.7.3</li>
+    <li>Python 3.6</li>
     <li>Youtube-dl</li>
-    <li>Django v.2.2.1</li>
+    <li>Django v.2.2.2</li>
     <li>Celery v.4.3.0</li>
     <li>Redis v.3.2.1</li>
 </ul>
